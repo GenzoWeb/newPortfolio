@@ -1,9 +1,10 @@
 {
-  "name": "gabarit_web",
+  "name": "portfolio",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./src/sass/style.scss:./assets/css/style.css"
+    "sass": "sass --watch ./src/sass/style.scss:./assets/css/style.css",
+    "browser": "browser-sync start --proxy \"localhost/portfolio\" --files \"*.php\" \"src/sass/*.scss\" \"assets/view/*.php\" \"assets/js/*.js\""
   },
   "author": "",
   "license": "ISC",
