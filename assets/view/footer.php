@@ -7,7 +7,8 @@
                 <p>Email : genzo10@hotmail.fr</p>
             </div>
         </footer>
-
-        <script src="assets/js/index.js"></script>
+        
+        <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+        <script src="assets/js/menu.js"></script>
     </body>
 </html>

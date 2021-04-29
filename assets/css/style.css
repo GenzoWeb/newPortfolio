@@ -13,6 +13,23 @@ body {
   background-color: skyblue;
   display: flex;
   justify-content: center;
+  transition: margin-left 1.5s;
+}
+
+.show_menu {
+  margin-left: -150px;
+}
+
+.box_menu {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 22px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  fill: white;
 }
 
 .menu {
@@ -24,11 +41,70 @@ body {
 .navmenu li {
   padding: 30px;
   text-align: center;
+  color: white;
 }
 .navmenu li:hover {
+  color: black;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+.contain {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+  display: flex;
+}
+
+/************************  HOME  ************************/
+.container_home {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./../../assets/images/image_home.jpg");
+  background-position: center;
+  background-size: cover;
   color: white;
 }
 
+.contain_home {
+  margin: auto;
+  display: flex;
+  width: 60%;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+}
+.contain_home p, .contain_home img {
+  margin-bottom: 20px;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.home_img {
+  border-radius: 50%;
+  filter: brightness(0.8);
+}
+
+.btn {
+  width: 100px;
+  height: 30px;
+  background-color: skyblue;
+  border-radius: 5px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.btn:hover {
+  background-color: blue;
+}
+
+/************************  FOOTER  ************************/
 .footer {
   width: 100%;
   height: 50px;

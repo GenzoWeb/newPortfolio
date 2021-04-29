@@ -1,4 +1,5 @@
 $primary : skyblue;
+$secondary: blue;
 
 $m1 : 10px;
 $m2 : 20px;
@@ -22,6 +23,23 @@ body {
     background-color: $primary;
     display: flex;
     justify-content: center;
+    transition: margin-left 1.5s;
+}
+
+.show_menu {
+    margin-left: -150px;
+}
+
+.box_menu {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 22px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    fill: white;
 }
 
 .menu {
@@ -34,12 +52,82 @@ body {
     li {
         padding: $m3;
         text-align: center;
+        color: white;
 
         &:hover {
-            color : white;
+            color : black;
         }
     }
 }
+
+.active {
+    text-decoration: underline;
+}
+
+.contain {
+    padding-left: $m2;
+    padding-right: $m2;
+    padding-top: $m4;;
+    display: flex;
+}
+
+
+/************************  HOME  ************************/
+
+
+.container_home {
+    background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)
+      ),
+    url('./../../assets/images/image_home.jpg');
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.contain_home {
+    margin: auto;
+    display: flex;
+    width: 60%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    
+    p, img {
+        margin-bottom:$m2;
+    }
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: $m2;
+}
+
+.home_img {
+    border-radius: 50%;
+    filter: brightness(0.8);
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    background-color: $primary;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+        background-color: $secondary;
+    }
+}
+
+/************************  FOOTER  ************************/
 
 .footer {
     width: 100%;

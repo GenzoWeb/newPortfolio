@@ -1,3 +1,25 @@
+<?php
+$containerHome = '';
+
+if($_SERVER['SCRIPT_NAME'] === '/portfolio/index.php'){
+    $containerHome = 'container_home';
+}else{
+    $containerHome = '';
+}
+
+//Améliorer fonction en prenant le lien aussi
+function activeClass ($namePage){
+    if($_SERVER['SCRIPT_NAME'] === $namePage){
+        $classActive = 'class="active"';
+    }else{
+        $classActive = 'class=""';
+    }
+
+    return $classActive;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -18,15 +40,18 @@
         </title>
     </head>
     <body>
-        <div id="container" class="container container_home">
+        <div id="container" class="container <?= $containerHome ?>">
+            <div id="box_menu" class="box_menu">
+                <box-icon name='menu'></box-icon>
+            </div>
             <section id="menu_container" class="menu_container">
                 <div class="menu">
                     <nav class="navmenu">
                         <ul class="navmenu_list">
-                            <li><a href="/portfolio/index.php">Accueil</a></li>
-                            <li><a href="/portfolio/assets/view/projects.php">Portfolio</a></li>
-                            <li><a href="/portfolio/assets/view/competences.php">Compétences</a></li>
-                            <li><a href="/portfolio/assets/view/contact.php">Contact</a></li>
+                            <li <?= activeClass('/portfolio/index.php'); ?>><a href="/portfolio/index.php">Accueil</a></li>
+                            <li <?= activeClass('/portfolio/assets/view/projects.php'); ?>><a href="/portfolio/assets/view/projects.php">Portfolio</a></li>
+                            <li <?= activeClass('/portfolio/assets/view/competences.php'); ?>><a href="/portfolio/assets/view/competences.php">Compétences</a></li>
+                            <li <?= activeClass('/portfolio/assets/view/contact.php'); ?>><a href="/portfolio/assets/view/contact.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

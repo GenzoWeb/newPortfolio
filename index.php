@@ -2,6 +2,30 @@
 
 <?php require "assets/view/header.php"; ?>
 
+<div class="contain_home">
+    <h1 class="title">Bienvenue sur mon portfolio</h1>
+    <img class="home_img" src="assets/images/developpeur.jpg" alt="">
+    <div class="description">
+        <p>
+            Je m'appelle <span>Julien</span>, je suis né en 1982.
+            Après plusieurs années professionnelles dans le monde de l'industrie, le manque de réflexion et d'épanouissement m'ont fait réagir.
+        </p>
+        <p>
+            J'ai décidé de me diriger vers un domaine pour lequel je me suis découvert une nouvelle passion, à savoir la programmation Web. 
+            J'ai donc choisi de me reconvertir dans le milieu de l'informatique.
+        </p>
+        <p>
+            Travaillant en équipe de 2*8, j'ai suivi une formation en ligne diplômante (enregistré au RNCP niveau 5/ BAC+2) de Développeur Web 
+            pendant 1an.
+            En plus des langages de programmation, j'ai appris l'architecture MVC, la POO et les intéractions avec des API.
+        </p>
+        <p>
+            Cette formation m'a permis d'acquérir de nouvelles compétences au travers de projets web et m'a conforté dans le choix de ma 
+            reconversion professionnelle.
+        </p>
+    </div>
+    <p class="btn"><a href="assets/view/portfolio.php">En voir plus</a></p>
+</div>
 
 <?php require "assets/view/footer.php"; ?>
 
