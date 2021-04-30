@@ -8,7 +8,6 @@
             </div>
         </footer>
         
-        <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
-        <script src="assets/js/menu.js"></script>
+        <script src="/portfolio/assets/js/menu.js"></script>
     </body>
 </html>

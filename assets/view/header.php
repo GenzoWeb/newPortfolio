@@ -1,24 +1,20 @@
 <?php
-$containerHome = '';
+$container = 'container';
 
 if($_SERVER['SCRIPT_NAME'] === '/portfolio/index.php'){
-    $containerHome = 'container_home';
-}else{
-    $containerHome = '';
+    $container .= ' container_home';
 }
 
-//Améliorer fonction en prenant le lien aussi
-function activeClass ($namePage){
-    if($_SERVER['SCRIPT_NAME'] === $namePage){
-        $classActive = 'class="active"';
-    }else{
-        $classActive = 'class=""';
+function activeLinkMenu ($link, $title_menu){
+    $class = 'link_menu';
+
+    if($_SERVER['SCRIPT_NAME'] === $link){
+        $class .= ' active"';
     }
 
-    return $classActive;
+    return '<li class="' . $class . '"><a href="' . $link . '">' . $title_menu . '</a></li>';
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,18 +36,18 @@ function activeClass ($namePage){
         </title>
     </head>
     <body>
-        <div id="container" class="container <?= $containerHome ?>">
-            <div id="box_menu" class="box_menu">
-                <box-icon name='menu'></box-icon>
+        <div id="container" class="<?= $container ?>">
+            <div id="burger" class="burger">
+                <span></span>
             </div>
             <section id="menu_container" class="menu_container">
                 <div class="menu">
-                    <nav class="navmenu">
-                        <ul class="navmenu_list">
-                            <li <?= activeClass('/portfolio/index.php'); ?>><a href="/portfolio/index.php">Accueil</a></li>
-                            <li <?= activeClass('/portfolio/assets/view/projects.php'); ?>><a href="/portfolio/assets/view/projects.php">Portfolio</a></li>
-                            <li <?= activeClass('/portfolio/assets/view/competences.php'); ?>><a href="/portfolio/assets/view/competences.php">Compétences</a></li>
-                            <li <?= activeClass('/portfolio/assets/view/contact.php'); ?>><a href="/portfolio/assets/view/contact.php">Contact</a></li>
+                    <nav>
+                        <ul>
+                            <?= activeLinkMenu('/portfolio/index.php', 'Accueil'); ?>
+                            <?= activeLinkMenu('/portfolio/assets/view/projects.php', 'Projets'); ?>
+                            <?= activeLinkMenu('/portfolio/assets/view/competences.php', 'Compétences'); ?>
+                            <?= activeLinkMenu('/portfolio/assets/view/contact.php', 'Contact'); ?>
                         </ul>
                     </nav>
                 </div>

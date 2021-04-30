@@ -1,6 +1,7 @@
-let box_menu = document.getElementById('box_menu');
-let menu = document.getElementById('menu_container');
+const burger = document.getElementById('burger');
+const menu = document.getElementById('menu_container');
 
-box_menu.addEventListener('click', function(){
+burger.addEventListener('click', () => {
+    burger.classList.toggle('hide_menu');
     menu.classList.toggle('show_menu');
-})
+});

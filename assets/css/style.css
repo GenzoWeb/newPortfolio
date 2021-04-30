@@ -1,35 +1,68 @@
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .container {
-  display: grid;
   min-height: calc(100vh - 50px);
-  grid-template-columns: min-content 1fr;
 }
 
 .menu_container {
-  background-color: skyblue;
+  height: 100%;
+  width: 150px;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   transition: margin-left 1.5s;
+  position: fixed;
+  z-index: 1;
+  border-radius: 0% 100% 65% 0%/0% 75% 55% 0%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .show_menu {
   margin-left: -150px;
 }
 
-.box_menu {
-  position: absolute;
-  margin-top: 10px;
-  margin-left: 22px;
+.burger {
   height: 30px;
+  width: 25px;
+  position: fixed;
+  margin-top: 30px;
+  margin-left: 20px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  fill: white;
+  z-index: 9999;
+}
+.burger span {
+  width: 100%;
+  height: 2px;
+  background-color: skyblue;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.burger span::before, .burger span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: skyblue;
+  transition: transform 0.5s ease-in-out;
+}
+.burger span::before {
+  transform: translate3d(-5px, -7px, 0px) rotate(-45deg) scale(0.7, 1);
+}
+.burger span::after {
+  transform: translate3d(-5px, 7px, 0px) rotate(45deg) scale(0.7, 1);
+}
+
+.hide_menu span::before {
+  transform: translateY(-10px);
+}
+.hide_menu span::after {
+  transform: translateY(10px);
 }
 
 .menu {
@@ -38,13 +71,14 @@ body {
   align-items: center;
 }
 
-.navmenu li {
+.link_menu {
   padding: 30px;
   text-align: center;
   color: white;
 }
-.navmenu li:hover {
-  color: black;
+
+.link_menu a:hover {
+  color: skyblue;
 }
 
 .active {
