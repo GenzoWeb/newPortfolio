@@ -36,21 +36,20 @@ function activeLinkMenu ($link, $title_menu){
         </title>
     </head>
     <body>
-        <div id="container" class="<?= $container ?>">
-            <div id="burger" class="burger">
-                <span></span>
+        <div id="burger" class="burger">
+            <span></span>
+        </div>
+        <section id="menu_container" class="menu_container">
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <?= activeLinkMenu('/portfolio/index.php', 'Accueil'); ?>
+                        <?= activeLinkMenu('/portfolio/assets/view/projects.php', 'Projets'); ?>
+                        <?= activeLinkMenu('/portfolio/assets/view/competences.php', 'Compétences'); ?>
+                        <?= activeLinkMenu('/portfolio/assets/view/contact.php', 'Contact'); ?>
+                    </ul>
+                </nav>
             </div>
-            <section id="menu_container" class="menu_container">
-                <div class="menu">
-                    <nav>
-                        <ul>
-                            <?= activeLinkMenu('/portfolio/index.php', 'Accueil'); ?>
-                            <?= activeLinkMenu('/portfolio/assets/view/projects.php', 'Projets'); ?>
-                            <?= activeLinkMenu('/portfolio/assets/view/competences.php', 'Compétences'); ?>
-                            <?= activeLinkMenu('/portfolio/assets/view/contact.php', 'Contact'); ?>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
-    
-            <section class="contain">
+        </section>
+        <div id="container" class="<?= $container ?>">     
+                <section class="contain">

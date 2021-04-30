@@ -8,13 +8,14 @@ $m4 : 40px;
 
 $heightFooter : 50px;
 
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-}
-
-.container {
-    min-height: calc(100vh - 50px);
 }
 
 .menu_container {
@@ -100,13 +101,24 @@ body {
 
 .active {
     text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.container {
+    min-height: calc(100vh - 50px);
+    padding-top: $m4;
+    padding-left: $m3;
+    padding-right: $m3;
 }
 
 .contain {
-    padding-left: $m2;
-    padding-right: $m2;
-    padding-top: $m4;;
-    display: flex;
+    margin: auto;
+    max-width: 1250px;
+}
+
+.title {
+    width: auto;
+    margin-bottom: $m2;
 }
 
 
@@ -126,23 +138,13 @@ body {
 }
 
 .contain_home {
-    margin: auto;
     display: flex;
-    width: 60%;
-    flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
     
     p, img {
         margin-bottom:$m2;
     }
-}
-
-.title {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: $m2;
 }
 
 .home_img {
@@ -164,6 +166,57 @@ body {
         background-color: $secondary;
     }
 }
+
+
+/************************  PROJECTS  ************************/
+
+.contain_projects {
+    @extend .contain_home;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    height: 300px;
+    width: auto;
+    position: relative;
+    margin: 0 $m1 $m2;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px black;
+
+    img {
+        transition: all 1s;
+    }
+
+    &:hover .card_text {
+        opacity: 1;
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+}
+
+.card_text {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
 
 /************************  FOOTER  ************************/
 

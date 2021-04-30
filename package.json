@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./src/sass/style.scss:./assets/css/style.css",
-    "browser": "browser-sync start --proxy \"localhost/portfolio\" --files \"*.php\" \"src/sass/*.scss\" \"assets/view/*.php\" \"assets/js/*.js\""
+    "browser": "browser-sync start --proxy \"localhost/portfolio\" --files \"*.php\" \"src/sass/*.scss\" \"assets/view/*.php\" \"assets/js/*.js\"",
+    "github": "git push https://github.com/GenzoWeb/newPortfolio.git"
   },
   "author": "",
   "license": "ISC",
@@ -13,11 +14,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GenzoWeb/StarterProject.git"
+    "url": "git+https://github.com/GenzoWeb/newPortfolio.git"
   },
   "bugs": {
-    "url": "https://github.com/GenzoWeb/StarterProject/issues"
+    "url": "https://github.com/GenzoWeb/newPortfolio/issues"
   },
-  "homepage": "https://github.com/GenzoWeb/StarterProject#readme",
+  "homepage": "https://github.com/GenzoWeb/newPortfolio#readme",
   "description": ""
 }
