@@ -1,21 +1,93 @@
 $primary : skyblue;
 $secondary: blue;
+$ok: rgb(0, 0, 0);
 
-$m1 : 10px;
-$m2 : 20px;
-$m3 : 30px;
-$m4 : 40px;
+$m1: 10px;
+$m2: 20px;
+$m3: 30px;
+$m4: 40px;
 
-$heightFooter : 50px;
+$boxshadow: 2px 2px 2px rgb(175, 175, 175), -2px -2px 2px rgb(73, 73, 73);
+$boxshadowInset: inset 2px 2px 2px rgb(175, 175, 175), inset -2px -2px 2px rgb(73, 73, 73);
+
+$heightFooter: 50px;
+
+$competences:
+    html 80%,
+    wordpress 50%,
+    javascript 70%,
+    php 70%,
+    symfony 30%;
 
 h1 {
     font-size: 30px;
     font-weight: bold;
 }
 
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+    background-color: #eff0f4;
+}
+
+.burger {
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    margin-top: $m3;
+    margin-left: $m2;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: $boxshadowInset;
+    
+    &:hover {
+        box-shadow: $boxshadow;
+    }
+
+    span {
+        width: 15px;
+        height: 2px;
+        background-color: $primary;
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $primary;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        &::before {
+            transform: translate3d(-3px, -4px, 0px) rotate(-45deg) scale(0.7, 1);
+        }
+        
+        &::after {
+            transform: translate3d(-3px, 4px, 0px) rotate(45deg) scale(0.7, 1);
+        }
+    }
+}
+
+.hide_menu span {
+    &::before {
+        transform: translateY(-5px);
+    }
+    
+    &::after {
+        transform: translateY(5px);
+    }
 }
 
 .menu_container {
@@ -35,77 +107,39 @@ body {
 .show_menu {
     margin-left: -150px;
 }
-
-.burger {
-    height: 30px;
-    width: 25px;
-    position: fixed;
-    margin-top: $m3;
-    margin-left: $m2;
-    cursor: pointer;
-    z-index: 9999;
-    
-    span {
-        width: 100%;
-        height: 2px;
-        background-color: $primary;
-        display: block;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-
-        &::before, &::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: $primary;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        &::before {
-            transform: translate3d(-5px, -7px, 0px) rotate(-45deg) scale(0.7, 1);
-        }
-        
-        &::after {
-            transform: translate3d(-5px, 7px, 0px) rotate(45deg) scale(0.7, 1);
-        }
-    }
-}
-
-.hide_menu span {
-    &::before {
-        transform: translateY(-10px);
-    }
-    
-    &::after {
-        transform: translateY(10px);
-    }
-}
-
 .menu {
-    min-height: 400px;
+    min-height: 530px;
     display: flex;
     align-items: center;
 }
 
 .link_menu {
-    padding: $m3;
+    width: 110px;
+    height: 50px;
     text-align: center;
-    color: white;
+    line-height: 50px;
+    color: $primary;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: $boxshadowInset;
+    cursor: pointer;
+
+    a {
+        display: block;
+    }
 }
 
-.link_menu a:hover {
+.link_menu:hover {
     color: $primary;
+    box-shadow: $boxshadow;
 }
 
 .active {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    box-shadow: $boxshadow;
 }
 
 .container {
-    min-height: calc(100vh - 50px);
+    min-height: calc(100vh - 90px);
     padding-top: $m4;
     padding-left: $m3;
     padding-right: $m3;
@@ -114,6 +148,7 @@ body {
 .contain {
     margin: auto;
     max-width: 1250px;
+    min-height: calc(100vh - 90px);
 }
 
 .title {
@@ -155,22 +190,24 @@ body {
 .btn {
     width: 100px;
     height: 30px;
-    background-color: $primary;
+    color: $primary;
     border-radius: 5px;
     line-height: 30px;
     text-align: center;
     cursor: pointer;
     transition: 0.4s;
+    box-shadow: 2px 2px 2px #d0d0d0,  -2px -2px 2px #f8f8f8;
 
     &:hover {
-        background-color: $secondary;
+        box-shadow: inset 2px 2px 2px #d0d0d0,  inset -2px -2px 2px #f8f8f8;
     }
 }
 
 
 /************************  PROJECTS  ************************/
 
-.contain_projects {
+
+.contain_projects, .contain_comp, .contain_contact {
     @extend .contain_home;
 }
 
@@ -187,7 +224,7 @@ body {
     margin: 0 $m1 $m2;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 5px 5px 10px black;
+    box-shadow: inset 7px 7px 7px #d0d0d0, inset -7px -7px 7px #f8f8f8;
 
     img {
         transition: all 1s;
@@ -215,6 +252,107 @@ body {
     align-items: center;
     opacity: 0;
     transition: opacity 1s;
+}
+
+
+/************************  COMPETENCES  ************************/
+
+
+.competences {
+    margin-top: 60px;
+    margin-bottom: $m2;
+    width: 100%;
+}
+
+.competences_graph_title {
+    text-align: center;
+}
+
+.bar_competences {
+    width: 500px;
+    height: $m3;
+    margin: $m1 auto $m2;
+    border-radius: $m1;
+    box-shadow: 2px 2px 2px #d0d0d0,  -2px -2px 2px #f8f8f8;
+
+
+    div {
+        height: $m3;
+        background-color: $primary;
+        border-radius: $m1;       
+    }
+}
+
+@each $competence in $competences {
+    .#{nth($competence, 1 )} {
+        width: #{nth($competence, 2 )};
+    }
+}
+
+/************************  CONTACT  ************************/
+
+
+.contain form {
+    margin-top: $m4;
+    margin-bottom: $m2;
+    width: 75%;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-areas: 
+        "a b"
+        "c c"
+        "d d";
+}
+
+.contact_name {
+    grid-area: a;
+}
+
+.contact_email {
+    grid-area: b;
+}
+
+.contact_message {
+    grid-area: c;
+}
+
+.contact_submit {
+    grid-area: d;
+    width: 100px;
+    margin: auto;
+}
+
+.form_input {
+    height: 35px;
+    width: 100%;
+    margin-bottom: $m1;
+    padding-left: 10px;
+    border-radius: 5px;
+    outline-style:none;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: 2px 2px 2px #d0d0d0,  -2px -2px 2px #f8f8f8;
+
+    &:focus {
+        box-shadow: inset 2px 2px 2px #d0d0d0,  inset -2px -2px 2px #f8f8f8;
+    }
+}
+
+.form_textarea {
+    @extend .form_input;
+    height: 200px;
+    resize: none;
+}
+
+.form_submit{
+    @extend .btn;
+    outline-style:none;
+    margin: auto !important;
+    color: black;
+}
+
+::placeholder {
+  color: black;
 }
 
 

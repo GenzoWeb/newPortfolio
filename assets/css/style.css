@@ -3,9 +3,62 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  background-color: #eff0f4;
+}
+
+.burger {
+  height: 35px;
+  width: 35px;
+  position: fixed;
+  margin-top: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 2px #afafaf, inset -2px -2px 2px #494949;
+}
+.burger:hover {
+  box-shadow: 2px 2px 2px #afafaf, -2px -2px 2px #494949;
+}
+.burger span {
+  width: 15px;
+  height: 2px;
+  background-color: skyblue;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.burger span::before, .burger span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: skyblue;
+  transition: transform 0.5s ease-in-out;
+}
+.burger span::before {
+  transform: translate3d(-3px, -4px, 0px) rotate(-45deg) scale(0.7, 1);
+}
+.burger span::after {
+  transform: translate3d(-3px, 4px, 0px) rotate(45deg) scale(0.7, 1);
+}
+
+.hide_menu span::before {
+  transform: translateY(-5px);
+}
+.hide_menu span::after {
+  transform: translateY(5px);
 }
 
 .menu_container {
@@ -26,69 +79,38 @@ body {
   margin-left: -150px;
 }
 
-.burger {
-  height: 30px;
-  width: 25px;
-  position: fixed;
-  margin-top: 30px;
-  margin-left: 20px;
-  cursor: pointer;
-  z-index: 9999;
-}
-.burger span {
-  width: 100%;
-  height: 2px;
-  background-color: skyblue;
-  display: block;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.burger span::before, .burger span::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: skyblue;
-  transition: transform 0.5s ease-in-out;
-}
-.burger span::before {
-  transform: translate3d(-5px, -7px, 0px) rotate(-45deg) scale(0.7, 1);
-}
-.burger span::after {
-  transform: translate3d(-5px, 7px, 0px) rotate(45deg) scale(0.7, 1);
-}
-
-.hide_menu span::before {
-  transform: translateY(-10px);
-}
-.hide_menu span::after {
-  transform: translateY(10px);
-}
-
 .menu {
-  min-height: 400px;
+  min-height: 530px;
   display: flex;
   align-items: center;
 }
 
 .link_menu {
-  padding: 30px;
+  width: 110px;
+  height: 50px;
   text-align: center;
-  color: white;
+  line-height: 50px;
+  color: skyblue;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: inset 2px 2px 2px #afafaf, inset -2px -2px 2px #494949;
+  cursor: pointer;
+}
+.link_menu a {
+  display: block;
 }
 
-.link_menu a:hover {
+.link_menu:hover {
   color: skyblue;
+  box-shadow: 2px 2px 2px #afafaf, -2px -2px 2px #494949;
 }
 
 .active {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  box-shadow: 2px 2px 2px #afafaf, -2px -2px 2px #494949;
 }
 
 .container {
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 90px);
   padding-top: 40px;
   padding-left: 30px;
   padding-right: 30px;
@@ -97,6 +119,7 @@ body {
 .contain {
   margin: auto;
   max-width: 1250px;
+  min-height: calc(100vh - 90px);
 }
 
 .title {
@@ -112,12 +135,12 @@ body {
   color: white;
 }
 
-.contain_home, .contain_projects {
+.contain_home, .contain_projects, .contain_comp, .contain_contact {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.contain_home p, .contain_projects p, .contain_home img, .contain_projects img {
+.contain_home p, .contain_projects p, .contain_comp p, .contain_contact p, .contain_home img, .contain_projects img, .contain_comp img, .contain_contact img {
   margin-bottom: 20px;
 }
 
@@ -126,18 +149,19 @@ body {
   filter: brightness(0.8);
 }
 
-.btn {
+.btn, .form_submit {
   width: 100px;
   height: 30px;
-  background-color: skyblue;
+  color: skyblue;
   border-radius: 5px;
   line-height: 30px;
   text-align: center;
   cursor: pointer;
   transition: 0.4s;
+  box-shadow: 2px 2px 2px #d0d0d0, -2px -2px 2px #f8f8f8;
 }
-.btn:hover {
-  background-color: blue;
+.btn:hover, .form_submit:hover {
+  box-shadow: inset 2px 2px 2px #d0d0d0, inset -2px -2px 2px #f8f8f8;
 }
 
 /************************  PROJECTS  ************************/
@@ -154,7 +178,7 @@ body {
   margin: 0 10px 20px;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 5px 5px 10px black;
+  box-shadow: inset 7px 7px 7px #d0d0d0, inset -7px -7px 7px #f8f8f8;
 }
 .card img {
   transition: all 1s;
@@ -179,6 +203,108 @@ body {
   align-items: center;
   opacity: 0;
   transition: opacity 1s;
+}
+
+/************************  COMPETENCES  ************************/
+.competences {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.competences_graph_title {
+  text-align: center;
+}
+
+.bar_competences {
+  width: 500px;
+  height: 30px;
+  margin: 10px auto 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #d0d0d0, -2px -2px 2px #f8f8f8;
+}
+.bar_competences div {
+  height: 30px;
+  background-color: skyblue;
+  border-radius: 10px;
+}
+
+.html {
+  width: 80%;
+}
+
+.wordpress {
+  width: 50%;
+}
+
+.javascript {
+  width: 70%;
+}
+
+.php {
+  width: 70%;
+}
+
+.symfony {
+  width: 30%;
+}
+
+/************************  CONTACT  ************************/
+.contain form {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 75%;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-areas: "a b" "c c" "d d";
+}
+
+.contact_name {
+  grid-area: a;
+}
+
+.contact_email {
+  grid-area: b;
+}
+
+.contact_message {
+  grid-area: c;
+}
+
+.contact_submit {
+  grid-area: d;
+  width: 100px;
+  margin: auto;
+}
+
+.form_input, .form_textarea {
+  height: 35px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 5px;
+  outline-style: none;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: 2px 2px 2px #d0d0d0, -2px -2px 2px #f8f8f8;
+}
+.form_input:focus, .form_textarea:focus {
+  box-shadow: inset 2px 2px 2px #d0d0d0, inset -2px -2px 2px #f8f8f8;
+}
+
+.form_textarea {
+  height: 200px;
+  resize: none;
+}
+
+.form_submit {
+  outline-style: none;
+  margin: auto !important;
+  color: black;
+}
+
+::placeholder {
+  color: black;
 }
 
 /************************  FOOTER  ************************/
