@@ -90,10 +90,9 @@ body {
   height: 50px;
   text-align: center;
   line-height: 50px;
-  color: skyblue;
+  color: white;
   border-radius: 20px;
   margin: 20px 0;
-  box-shadow: inset 2px 2px 2px #afafaf, inset -2px -2px 2px #494949;
   cursor: pointer;
 }
 .link_menu a {
@@ -101,12 +100,12 @@ body {
 }
 
 .link_menu:hover {
-  color: skyblue;
-  box-shadow: 2px 2px 2px #afafaf, -2px -2px 2px #494949;
+  color: white;
+  background-color: skyblue;
 }
 
 .active {
-  box-shadow: 2px 2px 2px #afafaf, -2px -2px 2px #494949;
+  text-decoration: underline;
 }
 
 .container {
@@ -178,7 +177,7 @@ body {
   margin: 0 10px 20px;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: inset 7px 7px 7px #d0d0d0, inset -7px -7px 7px #f8f8f8;
+  box-shadow: 7px 7px 7px #d0d0d0, -7px -7px 7px #f8f8f8;
 }
 .card img {
   transition: all 1s;
@@ -301,10 +300,15 @@ body {
   outline-style: none;
   margin: auto !important;
   color: black;
+  background-color: white;
 }
 
 ::placeholder {
   color: black;
+}
+
+.form_error {
+  color: red;
 }
 
 /************************  FOOTER  ************************/

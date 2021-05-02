@@ -9,5 +9,7 @@
         </footer>
         
         <script src="/portfolio/assets/js/menu.js"></script>
+        <script src="/portfolio/assets/js/ValidForm.js"></script>
+        <script src="/portfolio/assets/js/formContact.js"></script>
     </body>
 </html>

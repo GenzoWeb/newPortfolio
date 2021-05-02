@@ -9,6 +9,8 @@ $m4: 40px;
 
 $boxshadow: 2px 2px 2px rgb(175, 175, 175), -2px -2px 2px rgb(73, 73, 73);
 $boxshadowInset: inset 2px 2px 2px rgb(175, 175, 175), inset -2px -2px 2px rgb(73, 73, 73);
+$boxshadowLight: 2px 2px 2px #d0d0d0, -2px -2px 2px #f8f8f8;
+$boxshadowLightInset: inset 2px 2px 2px #d0d0d0, inset -2px -2px 2px #f8f8f8;
 
 $heightFooter: 50px;
 
@@ -118,10 +120,10 @@ body {
     height: 50px;
     text-align: center;
     line-height: 50px;
-    color: $primary;
+    color: white;
     border-radius: 20px;
     margin: 20px 0;
-    box-shadow: $boxshadowInset;
+    // box-shadow: $boxshadowInset;
     cursor: pointer;
 
     a {
@@ -130,12 +132,14 @@ body {
 }
 
 .link_menu:hover {
-    color: $primary;
-    box-shadow: $boxshadow;
+    color: white;
+    background-color: $primary;
+    // box-shadow: $boxshadow;
 }
 
 .active {
-    box-shadow: $boxshadow;
+    // box-shadow: $boxshadow;
+    text-decoration: underline;
 }
 
 .container {
@@ -196,10 +200,10 @@ body {
     text-align: center;
     cursor: pointer;
     transition: 0.4s;
-    box-shadow: 2px 2px 2px #d0d0d0,  -2px -2px 2px #f8f8f8;
+    box-shadow: $boxshadowLight;
 
     &:hover {
-        box-shadow: inset 2px 2px 2px #d0d0d0,  inset -2px -2px 2px #f8f8f8;
+        box-shadow: $boxshadowLightInset;
     }
 }
 
@@ -224,7 +228,7 @@ body {
     margin: 0 $m1 $m2;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: inset 7px 7px 7px #d0d0d0, inset -7px -7px 7px #f8f8f8;
+    box-shadow: 7px 7px 7px #d0d0d0, -7px -7px 7px #f8f8f8;
 
     img {
         transition: all 1s;
@@ -273,7 +277,7 @@ body {
     height: $m3;
     margin: $m1 auto $m2;
     border-radius: $m1;
-    box-shadow: 2px 2px 2px #d0d0d0,  -2px -2px 2px #f8f8f8;
+    box-shadow: $boxshadowLight;
 
 
     div {
@@ -331,10 +335,10 @@ body {
     outline-style:none;
     box-sizing: border-box;
     border: none;
-    box-shadow: 2px 2px 2px #d0d0d0,  -2px -2px 2px #f8f8f8;
+    box-shadow: $boxshadowLight;
 
     &:focus {
-        box-shadow: inset 2px 2px 2px #d0d0d0,  inset -2px -2px 2px #f8f8f8;
+        box-shadow: $boxshadowLightInset;
     }
 }
 
@@ -349,10 +353,15 @@ body {
     outline-style:none;
     margin: auto !important;
     color: black;
+    background-color: white;
 }
 
 ::placeholder {
   color: black;
+}
+
+.form_error {
+    color: red;
 }
 
 
