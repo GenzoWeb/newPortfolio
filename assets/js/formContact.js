@@ -1,25 +1,34 @@
-const formContact = document.getElementById('form_contact');
-const formName = document.getElementById('name');
-const formEmail = document.getElementById('email');
-const formMessage = document.getElementById('message');
-const errorName = document.getElementById('error_name');
-const errorEmail = document.getElementById('error_email');
-const errorMessage = document.getElementById('error_message');
-let valid;
-
-
 if(formContact) {
+    if(messageSubmitted){
+        showMessageTraitement(messageSubmitted)
+    }
+
+    if(messageSubmittedError){
+        showMessageTraitement(messageSubmittedError)
+    }
+
+    function showMessageTraitement(traitementMessage){
+        titleForm.style.display="none"
+        traitementMessage.style.display ="block";
+        setTimeout(() => {
+            traitementMessage.style.display ="none";
+            titleForm.style.display="block"
+        }, 2000);
+    }
+
     formContact.addEventListener('submit', (e) => {
-        e.preventDefault();   
+        e.preventDefault();  
         const testName = new ValidForm(formName, errorName);
         const testEmail = new ValidForm(formEmail, errorEmail, formEmail.value);
         const testMessage = new ValidForm(formMessage, errorMessage);
 
-        const resultTestName = testName.testForm();
-        const resultTestEmail = testEmail.testForm();
-        const resultTestMessage = testMessage.testForm();
+        const resultTestName = testName.testValid();
+        const resultTestEmail = testEmail.testValid();
+        const resultTestMessage = testMessage.testValid();
 
         if(resultTestName && resultTestEmail && resultTestMessage){
-            console.log('OK c est bon je peux envoyer');
+            formContact.submit();
+            formSubmit.value = 'Envoi ...'
         }
-    })}
+    })
+}

@@ -48,11 +48,6 @@ body {
     display: flex;
     justify-content: center;
     border-radius: 50%;
-    box-shadow: $boxshadowInset;
-    
-    &:hover {
-        box-shadow: $boxshadow;
-    }
 
     span {
         width: 15px;
@@ -92,6 +87,22 @@ body {
     }
 }
 
+.burger_shadow {
+    box-shadow: $boxshadowInset;
+    
+    &:hover {
+        box-shadow: $boxshadow;
+    }   
+}
+
+.burger_light_shadow {
+    box-shadow: $boxshadowLight;
+
+    &:hover {
+        box-shadow: $boxshadowLightInset;
+    }
+}
+
 .menu_container {
     height: 100%;
     width: 150px;
@@ -109,6 +120,7 @@ body {
 .show_menu {
     margin-left: -150px;
 }
+
 .menu {
     min-height: 530px;
     display: flex;
@@ -228,7 +240,7 @@ body {
     margin: 0 $m1 $m2;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 7px 7px 7px #d0d0d0, -7px -7px 7px #f8f8f8;
+    box-shadow: 7px 7px 7px #a5a5a5, -7px -7px 7px #d4d4d4;
 
     img {
         transition: all 1s;
@@ -295,6 +307,30 @@ body {
 
 /************************  CONTACT  ************************/
 
+.contain_contact h1 {
+    height: 50px;
+    line-height: 50px;
+}
+
+.message_submitted {
+    background-color: rgba(169, 247, 169, 0.5);
+    color: #3b8416;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: none;
+    margin-bottom: 0!important;
+}
+
+.message_error {
+    @extend .message_submitted;
+    background-color: rgba(255, 0, 0, 0.6);
+    color: rgb(185, 8, 8);
+    width: 400px;
+}
 
 .contain form {
     margin-top: $m4;

@@ -1,6 +1,6 @@
 <?php $title = "Accueil"; ?>
 
-<?php require "assets/view/header.php"; ?>
+<?php require "assets/public/header.php"; ?>
 
 <div class="contain_home">
     <h1 class="title">Bienvenue sur mon portfolio</h1>
@@ -24,8 +24,8 @@
             reconversion professionnelle.
         </p>
     </div>
-    <p class="btn"><a href="assets/view/portfolio.php">En voir plus</a></p>
+    <p class="btn"><a href="assets/public/portfolio.php">En voir plus</a></p>
 </div>
 
-<?php require "assets/view/footer.php"; ?>
+<?php require "assets/public/footer.php"; ?>
 

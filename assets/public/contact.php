@@ -1,10 +1,15 @@
-<?php $title = "Me contacter"; ?>
+<?php 
+session_start();
+$title = "Me contacter"; ?>
 
 <?php require "header.php"; ?>
 
 <div class="contain_contact">
     <h1>Contactez moi</h1>
-    <form id="form_contact" action="" method="post">
+    <?php if (isset($_SESSION['messageForm'])) : ?>
+        <?= $_SESSION['messageForm']; ?>
+    <?php endif ?>
+    <form id="form_contact" action="sendForm.php" method="post">
         <div class="contact_name">
             <input class="form_input" type="text" id="name" name="name" placeholder="Nom" value="">
             <p id="error_name" class="form_error"></p>

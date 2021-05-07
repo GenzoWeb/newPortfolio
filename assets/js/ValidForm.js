@@ -6,14 +6,10 @@ class ValidForm {
       this.valid;
       this.message = "";
     }
-  
-    testForm() {   
-        return this.testValid();
-    }
-    
+
     testValid() {
         
-        if(this.nameInput.value === "") {
+        if(this.nameInput.value == "") {
             this.message = "Veuillez remplir ce champs !"
         }
         
@@ -25,7 +21,7 @@ class ValidForm {
             this.valid = true;
         }
 
-        if(this.emailValue !== "") {
+        if(this.emailValue != "") {
             this.validateEmail(this.emailValue);
         }
 

@@ -1,7 +1,14 @@
-const burger = document.getElementById('burger');
-const menu = document.getElementById('menu_container');
-
 burger.addEventListener('click', () => {
-    burger.classList.toggle('hide_menu');
-    menu.classList.toggle('show_menu');
+    if(burgerEvent){
+        burgerEvent = false
+        burger.classList.toggle('hide_menu');
+        menu.classList.toggle('show_menu');
+
+        setTimeout(() => {
+            burger.classList.toggle('burger_shadow');
+            burger.classList.toggle('burger_light_shadow');
+            burgerEvent = true;
+        }, 400);
+    }
 });
+
