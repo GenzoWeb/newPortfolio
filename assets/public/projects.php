@@ -2,7 +2,7 @@
 
 <?php require "header.php"; ?>
 
-<div class="contain_projects">
+<div id="swup" class="contain_projects transition-top">
     <h1 class="title">Mes réalisations</h1>
     <div class="projects">
         <div class="card">

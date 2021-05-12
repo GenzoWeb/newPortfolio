@@ -7,11 +7,13 @@
                 <p>Email : genzo10@hotmail.fr</p>
             </div>
         </footer>
-        
+
+        <script src="/portfolio/assets/js/swup.min.js"></script>
         <script src="/portfolio/assets/js/index.js"></script>
         <script src="/portfolio/assets/js/menu.js"></script>
         <script src="/portfolio/assets/js/ValidForm.js"></script>
         <script src="/portfolio/assets/js/formContact.js"></script>
+        <script src="/portfolio/assets/js/swup.js"></script>
     </body>
 </html>
 

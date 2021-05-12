@@ -4,8 +4,8 @@ $title = "Me contacter"; ?>
 
 <?php require "header.php"; ?>
 
-<div class="contain_contact">
-    <h1>Contactez moi</h1>
+<div id="swup" class="contain_contact transition-top">
+    <h1 class="title">Contactez moi</h1>
     <?php if (isset($_SESSION['messageForm'])) : ?>
         <?= $_SESSION['messageForm']; ?>
     <?php endif ?>

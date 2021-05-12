@@ -2,7 +2,7 @@
 
 <?php require "header.php"; ?>
 
-<div class="contain_comp">
+<div id="swup" class="contain_comp transition-top">
     <h1 class="title">Mes compétences</h1>
     <div class="competences">
         <div>

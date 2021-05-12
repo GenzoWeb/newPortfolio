@@ -4,16 +4,6 @@ $container = 'container';
 if($_SERVER['SCRIPT_NAME'] === '/portfolio/index.php') {
     $container .= ' container_home';
 }
-
-function activeLinkMenu ($link, $title_menu) {
-    $class = 'link_menu';
-
-    if($_SERVER['SCRIPT_NAME'] === $link) {
-        $class .= ' active"';
-    }
-
-    return '<li class="' . $class . '"><a href="' . $link . '">' . $title_menu . '</a></li>';
-}
 ?>
 
 <!DOCTYPE html>
@@ -40,16 +30,14 @@ function activeLinkMenu ($link, $title_menu) {
             <span></span>
         </div>
         <section id="menu_container" class="menu_container">
-            <div class="menu">
-                <nav>
-                    <ul>
-                        <?= activeLinkMenu('/portfolio/index.php', 'Accueil'); ?>
-                        <?= activeLinkMenu('/portfolio/assets/public/projects.php', 'Projets'); ?>
-                        <?= activeLinkMenu('/portfolio/assets/public/competences.php', 'Compétences'); ?>
-                        <?= activeLinkMenu('/portfolio/assets/public/contact.php', 'Contact'); ?>
-                    </ul>
-                </nav>
-            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="link_menu link_home"><a href="/portfolio/index.php">Accueil</a></li>
+                    <li class="link_menu link_projects"><a href="/portfolio/assets/public/projects.php">Projets</a></li>
+                    <li class="link_menu"><a href="/portfolio/assets/public/competences.php">Compétences</a></li>
+                    <li class="link_menu"><a href="/portfolio/assets/public/contact.php">Contact</a></li>
+                </ul>
+            </nav>
         </section>
         <div id="container" class="<?= $container ?>">     
                 <section class="contain">

@@ -14,7 +14,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 if($errors == false) { 
-    $messageForm = '<p class="message_error">Désolé une erreur s\'est produite veuillez recommencer !</p>';
+    $messageForm = '<p class="form_message message_error">Désolé une erreur s\'est produite veuillez recommencer !</p>';
 }else {
     $to = 'genzo10@hotmail.fr';
     $subject = 'Formulaire portfolio';
@@ -42,7 +42,7 @@ if($errors == false) {
     );
 
     mail($to, $subject, $messageSend, $headers);
-    $messageForm = '<p class="message_submitted">Votre message a bien été envoyé</p>';
+    $messageForm = '<p class="form_message message_submitted">Votre message a bien été envoyé</p>';
 }
 
 $_SESSION['messageForm'] = $messageForm;

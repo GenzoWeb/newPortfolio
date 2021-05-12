@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sass": "^1.32.11"
+    "sass": "^1.32.11",
+    "swup": "^2.0.14"
   },
   "repository": {
     "type": "git",

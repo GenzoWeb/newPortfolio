@@ -1,6 +1,4 @@
 $primary : skyblue;
-$secondary: blue;
-$ok: rgb(0, 0, 0);
 
 $m1: 10px;
 $m2: 20px;
@@ -68,45 +66,45 @@ body {
         }
 
         &::before {
-            transform: translate3d(-3px, -4px, 0px) rotate(-45deg) scale(0.7, 1);
+            transform: translateY(-5px);
         }
         
         &::after {
-            transform: translate3d(-3px, 4px, 0px) rotate(45deg) scale(0.7, 1);
+            transform: translateY(5px);
         }
     }
 }
 
 .hide_menu span {
     &::before {
-        transform: translateY(-5px);
+        transform: translate3d(-3px, -4px, 0px) rotate(-45deg) scale(0.7, 1);
     }
     
     &::after {
-        transform: translateY(5px);
+        transform: translate3d(-3px, 4px, 0px) rotate(45deg) scale(0.7, 1);
     }
 }
 
 .burger_shadow {
-    box-shadow: $boxshadowInset;
+    box-shadow: $boxshadowLight;
     
     &:hover {
-        box-shadow: $boxshadow;
+        box-shadow: $boxshadowLightInset;  
     }   
 }
 
-.burger_light_shadow {
-    box-shadow: $boxshadowLight;
+.burger_dark_shadow {
+    box-shadow: $boxshadowInset;
 
     &:hover {
-        box-shadow: $boxshadowLightInset;
+        box-shadow: $boxshadow;
     }
 }
 
 .menu_container {
     height: 100%;
     width: 150px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     transition: margin-left 1.5s;
@@ -115,10 +113,11 @@ body {
     border-radius: 0% 100% 65% 0%/0% 75% 55% 0%;
     overflow-y: auto;
     overflow-x: hidden;
+    margin-left: -150px;
 }
 
 .show_menu {
-    margin-left: -150px;
+    margin-left: 0;
 }
 
 .menu {
@@ -154,17 +153,22 @@ body {
     text-decoration: underline;
 }
 
+.disabled {
+    pointer-events: none;
+}
+
 .container {
-    min-height: calc(100vh - 90px);
-    padding-top: $m4;
+    min-height: calc(100vh - 150px);
+    padding-top: 100px;
     padding-left: $m3;
     padding-right: $m3;
+    overflow: hidden;
 }
 
 .contain {
     margin: auto;
     max-width: 1250px;
-    min-height: calc(100vh - 90px);
+    min-height: calc(100vh - 150px);
 }
 
 .title {
@@ -178,10 +182,10 @@ body {
 
 .container_home {
     background:
-    linear-gradient(
-        rgba(0, 0, 0, 0.4), 
-        rgba(0, 0, 0, 0.4)
-      ),
+    // linear-gradient(
+    //     rgba(0, 0, 0, 0.4), 
+    //     rgba(0, 0, 0, 0.4)
+    //   ),
     url('./../../assets/images/image_home.jpg');
     background-position: center;
     background-size: cover;
@@ -198,15 +202,25 @@ body {
     }
 }
 
+.content_home {
+    display: flex;
+    margin-top: $m4;
+}
+
 .home_img {
     border-radius: 50%;
     filter: brightness(0.8);
 }
 
+.description {
+    padding: 20px;
+}
+
+
 .btn {
     width: 100px;
     height: 30px;
-    color: $primary;
+    color: white;
     border-radius: 5px;
     line-height: 30px;
     text-align: center;
@@ -231,6 +245,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: $m4;
 }
 
 .card {
@@ -275,7 +290,7 @@ body {
 
 
 .competences {
-    margin-top: 60px;
+    margin-top: $m4;
     margin-bottom: $m2;
     width: 100%;
 }
@@ -416,4 +431,23 @@ body {
         margin-left:$m2;
         margin-right:$m2;
     }
+}
+
+
+
+/******************* SWUP ***********************/
+
+.transition-top {
+    transition: 0.8s;
+    transform: translateY(0);
+}
+
+html.is-animating .transition-top {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+html.is-leaving .transition-top {
+    opacity: 0;
+    transform: translateY(-100%);
 }
