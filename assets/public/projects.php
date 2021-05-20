@@ -2,7 +2,7 @@
 
 <?php require "header.php"; ?>
 
-<div id="swup" class="contain_projects transition-top">
+<div class="contain_projects transition-top">
     <h1 class="title">Mes réalisations</h1>
     <div class="projects">
         <div class="card">
@@ -28,6 +28,7 @@
                 <img src="../images/p3.png" alt="">
                 <div class="card_text">
                     <p>Création d'une carte intéractive</p>
+                    <p>avec une API</p>
                     <p>JAVASCRIPT</p>
                 </div>
             </a>
@@ -46,6 +47,7 @@
                 <img src="../images/p5.png" alt="">
                 <div class="card_text">
                     <p>Projet final pour valider ma formation</p>
+                    <p>avec une API</p>
                     <p>PHP</p>
                 </div>
             </a>

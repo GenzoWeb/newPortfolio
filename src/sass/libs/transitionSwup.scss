@@ -1,0 +1,46 @@
+%init {
+    opacity: 1;
+    transition: 0.8s;
+    transform: translateX(0);
+    transform: translateY(0);
+}
+
+
+.transition-top, .transition-left, .transition-right, .transition-comp {
+    @extend %init;
+}
+
+html.is-animating .transition-top {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+html.is-leaving .transition-top {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+html.is-animating .transition-left {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+html.is-leaving .transition-left {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+html.is-animating .transition-right {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+html.is-leaving .transition-right {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+html.is-leaving .transition-comp {
+    opacity: 0;
+    transform: translateY(-100%);
+}

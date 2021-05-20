@@ -1,16 +1,10 @@
+@import "libs/transitionSwup.scss";
+@import "libs/responsive.scss";
+
 $primary : skyblue;
-
-$m1: 10px;
-$m2: 20px;
-$m3: 30px;
-$m4: 40px;
-
-$boxshadow: 2px 2px 2px rgb(175, 175, 175), -2px -2px 2px rgb(73, 73, 73);
-$boxshadowInset: inset 2px 2px 2px rgb(175, 175, 175), inset -2px -2px 2px rgb(73, 73, 73);
-$boxshadowLight: 2px 2px 2px #d0d0d0, -2px -2px 2px #f8f8f8;
-$boxshadowLightInset: inset 2px 2px 2px #d0d0d0, inset -2px -2px 2px #f8f8f8;
-
 $heightFooter: 50px;
+$minHeight: calc(100vh - #{$heightFooter});
+$maxWidth: 1500px;
 
 $competences:
     html 80%,
@@ -18,6 +12,11 @@ $competences:
     javascript 70%,
     php 70%,
     symfony 30%;
+
+$boxshadow: 2px 2px 2px rgb(175, 175, 175), -2px -2px 2px rgb(73, 73, 73);
+$boxshadowInset: inset 2px 2px 2px rgb(175, 175, 175), inset -2px -2px 2px rgb(73, 73, 73);
+$boxshadowLight: 2px 2px 2px #d0d0d0, -2px -2px 2px #f8f8f8;
+$boxshadowLightInset: inset 2px 2px 2px #d0d0d0, inset -2px -2px 2px #f8f8f8;
 
 h1 {
     font-size: 30px;
@@ -31,7 +30,7 @@ h2 {
 
 body {
 	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
+	font-size: 17px;
     background-color: #eff0f4;
 }
 
@@ -39,13 +38,14 @@ body {
     height: 35px;
     width: 35px;
     position: fixed;
-    margin-top: $m3;
-    margin-left: $m2;
+    margin-top: 30px;
+    margin-left: 20px;
     cursor: pointer;
     z-index: 9999;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
-    border-radius: 50%;
+    align-items: center;
 
     span {
         width: 15px;
@@ -53,7 +53,6 @@ body {
         background-color: $primary;
         display: block;
         position: absolute;
-        top: 50%;
         transform: translateY(-50%);
 
         &::before, &::after {
@@ -104,10 +103,10 @@ body {
 .menu_container {
     height: 100%;
     width: 150px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
-    transition: margin-left 1.5s;
+    transition: margin-left 1s;
     position: fixed;
     z-index: 1;
     border-radius: 0% 100% 65% 0%/0% 75% 55% 0%;
@@ -121,21 +120,17 @@ body {
 }
 
 .menu {
-    min-height: 530px;
+    min-height: 350px;
     display: flex;
     align-items: center;
 }
 
 .link_menu {
-    width: 110px;
-    height: 50px;
+    height: 20px;
     text-align: center;
-    line-height: 50px;
+    line-height: 20px;
     color: white;
-    border-radius: 20px;
-    margin: 20px 0;
-    // box-shadow: $boxshadowInset;
-    cursor: pointer;
+    margin: 50px 0;
 
     a {
         display: block;
@@ -143,13 +138,11 @@ body {
 }
 
 .link_menu:hover {
-    color: white;
-    background-color: $primary;
-    // box-shadow: $boxshadow;
+    font-size: 18px;
+    color: skyblue;
 }
 
 .active {
-    // box-shadow: $boxshadow;
     text-decoration: underline;
 }
 
@@ -158,62 +151,80 @@ body {
 }
 
 .container {
-    min-height: calc(100vh - 150px);
-    padding-top: 100px;
-    padding-left: $m3;
-    padding-right: $m3;
+    min-height: $minHeight;
     overflow: hidden;
+    margin-bottom: $heightFooter;
 }
 
 .contain {
-    margin: auto;
-    max-width: 1250px;
-    min-height: calc(100vh - 150px);
+    min-height: $minHeight;
 }
 
 .title {
-    width: auto;
-    margin-bottom: $m2;
+    min-height: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 
 /************************  HOME  ************************/
 
+.title_home {
+    @extend .title;
+    border-right: 2px solid white;
+    letter-spacing: 0.07em;
+    animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
 
 .container_home {
-    background:
-    // linear-gradient(
-    //     rgba(0, 0, 0, 0.4), 
-    //     rgba(0, 0, 0, 0.4)
-    //   ),
-    url('./../../assets/images/image_home.jpg');
+    background: no-repeat url('./../../assets/images/image_home.jpg');
     background-position: center;
     background-size: cover;
-    color: white;
 }
 
 .contain_home {
+    min-height: $minHeight;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
     
-    p, img {
-        margin-bottom:$m2;
+    p {
+        margin-bottom:20px;
     }
 }
 
 .content_home {
-    display: flex;
-    margin-top: $m4;
+    margin-top: 50px;
 }
 
 .home_img {
+    height: 240px;
+    width: 240px;
     border-radius: 50%;
     filter: brightness(0.8);
+    margin-right: 20px;
+    margin-top: 25px;
 }
 
 .description {
-    padding: 20px;
+    display: flex;
+    max-width: $maxWidth;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -239,23 +250,30 @@ body {
 
 .contain_projects, .contain_comp, .contain_contact {
     @extend .contain_home;
+    color: black;
+    max-width: $maxWidth;
+    margin: auto;
 }
 
 .projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: $m4;
+    max-width: 1200px;
 }
 
 .card {
     height: 300px;
     width: auto;
     position: relative;
-    margin: 0 $m1 $m2;
+    margin: 0 10px 20px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 7px 7px 7px #a5a5a5, -7px -7px 7px #d4d4d4;
+
+    a {
+        display: block;
+    }
 
     img {
         transition: all 1s;
@@ -288,11 +306,14 @@ body {
 
 /************************  COMPETENCES  ************************/
 
+.contain_comp {
+    max-width: 700px;
+}
 
 .competences {
-    margin-top: $m4;
-    margin-bottom: $m2;
-    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
 }
 
 .competences_graph_title {
@@ -300,17 +321,17 @@ body {
 }
 
 .bar_competences {
-    width: 500px;
-    height: $m3;
-    margin: $m1 auto $m2;
-    border-radius: $m1;
+    width: 90%;
+    height: 30px;
+    margin: 10px auto 20px;
+    border-radius: 10px;
     box-shadow: $boxshadowLight;
 
 
     div {
-        height: $m3;
+        height: 30px;
         background-color: $primary;
-        border-radius: $m1;       
+        border-radius: 10px;       
     }
 }
 
@@ -337,7 +358,8 @@ body {
     border-radius: 10px;
     font-weight: bold;
     display: none;
-    margin-bottom: 0!important;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .message_error {
@@ -347,9 +369,10 @@ body {
     width: 400px;
 }
 
-.contain form {
-    margin-top: $m4;
-    margin-bottom: $m2;
+.contain_contact form {
+    max-width: $maxWidth;
+    margin-top: 40px;
+    margin-bottom: 20px;
     width: 75%;
     display: grid;
     grid-column-gap: 10px;
@@ -380,7 +403,7 @@ body {
 .form_input {
     height: 35px;
     width: 100%;
-    margin-bottom: $m1;
+    margin-bottom: 10px;
     padding-left: 10px;
     border-radius: 5px;
     outline-style:none;
@@ -421,33 +444,99 @@ body {
 .footer {
     width: 100%;
     height: $heightFooter;
-    background-color: black;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(20, 20, 20);
     color: white;
+}
+
+.contain_footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
+    max-width: $maxWidth;
+    margin: auto;
+}
 
-    p {
-        margin-left:$m2;
-        margin-right:$m2;
+.link_footer {
+    display: flex;
+    margin-left: 20px;
+
+    li {
+        margin: 0 5px;
+
+        &:hover {
+            color: skyblue;
+        }
     }
 }
 
-
-
-/******************* SWUP ***********************/
-
-.transition-top {
-    transition: 0.8s;
-    transform: translateY(0);
+.text_footer {
+    margin-right: 20px;
 }
 
-html.is-animating .transition-top {
-    opacity: 0;
-    transform: translateY(100%);
+
+/************************  MEDIA QUERIES  ************************/
+
+@media #{$long} {
+    .home_img {
+        margin-top: 45px;
+    }
 }
 
-html.is-leaving .transition-top {
-    opacity: 0;
-    transform: translateY(-100%);
+@media #{$mediumLong} {
+    .home_img {
+        margin-top: 60px;
+    }
+}
+
+@media #{$medium} {
+    .description {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home_img {
+        margin-top: 0;
+    }
+}
+
+@media #{$small} {
+    .contain_contact form {
+        grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        "d";
+    }
+
+    .contain_footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .link_footer {
+        margin-bottom: 5px;
+        margin-left: 0;
+    }
+
+    .text_footer {
+        margin-right: 0;
+    }
+}
+
+@media #{$verySmall} {
+    .card {
+        width: 200px;
+        height: auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .title {
+        margin-top: 80px;
+    }
 }

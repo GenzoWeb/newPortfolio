@@ -2,11 +2,11 @@
 
 <?php require "assets/public/header.php"; ?>
 
-<div id="swup" class="contain_home transition-top">
-    <h1 class="title">Bienvenue sur mon portfolio</h1>
-    <div class="content_home">
+<div class="contain_home container_home transition-top">
+    <h1 id="text_auto" class="title_home">Bienvenue sur mon portfolio</h1>
+    <div class="description">
         <img class="home_img" src="/portfolio/assets/images/developpeur.jpg" alt="">
-        <div class="description">
+        <div class="content_home">   
             <p>
                 Je m'appelle <span>Julien</span>, je suis né en 1982.
                 Après plusieurs années professionnelles dans le monde de l'industrie, le manque de réflexion et d'épanouissement m'ont fait réagir.
@@ -26,7 +26,7 @@
             </p>
         </div>
     </div>
-    <p class="btn transition-top"><a href="/portfolio/assets/public/projects.php">En voir plus</a></p>
+    <p class="btn"><a href="/portfolio/assets/public/projects.php">En voir plus</a></p>
 </div>
 
 <?php require "assets/public/footer.php"; ?>

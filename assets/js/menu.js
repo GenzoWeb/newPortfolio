@@ -1,5 +1,5 @@
 burger.addEventListener('click', () => {
-    if(burgerEvent){
+    if(burgerEvent) {
         burgerEvent = false
         burger.classList.toggle('hide_menu');
         menu.classList.toggle('show_menu');
@@ -8,20 +8,17 @@ burger.addEventListener('click', () => {
             burger.classList.toggle('burger_shadow');
             burger.classList.toggle('burger_dark_shadow');
             burgerEvent = true;
-        }, 400);
+        }, 300);
     }
 });
 
-window.onload = function () {
-    const locationHref = location.href;
-    const locationPage = locationHref.substring(locationHref.lastIndexOf( "/" ) + 1);
-    if(locationPage == '') {
-        linkHome.classList.add('active')
+function menuBorderRadius() {
+    if( window.innerHeight < 350) {
+            menu.style.borderRadius = "unset";
+    } else {
+            menu.style.borderRadius = "0% 100% 65% 0%/0% 75% 55% 0%";
     }
-
-    linksMenu.forEach(function(linkMen) {
-        if(linkMen.href == location.href) {
-            linkMen.classList.add('active')
-        }
-    })
 }
+
+menuBorderRadius()
+window.onresize = menuBorderRadius;
