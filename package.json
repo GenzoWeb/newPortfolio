@@ -5,14 +5,22 @@
   "scripts": {
     "sass": "sass --watch ./src/sass/style.scss:./assets/css/style.css",
     "browser": "browser-sync start --proxy \"localhost/portfolio\" --files \"*.php\" \"src/sass/*.scss\" \"assets/view/*.php\" \"assets/js/*.js\"",
-    "github": "git push https://github.com/GenzoWeb/newPortfolio.git"
+    "github": "git push https://github.com/GenzoWeb/newPortfolio.git",
+    "babel": "./node_modules/.bin/babel assets --out-dir assets/lib",
+    "prefix": "postcss ./assets/css/style.css -u autoprefixer > ./assets/css/main.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.3.0",
+    "postcss-cli": "^8.3.1",
     "sass": "^1.32.11",
     "swup": "^2.0.14"
   },
+  "browserslist": [
+    "last 2 version"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GenzoWeb/newPortfolio.git"
@@ -21,5 +29,11 @@
     "url": "https://github.com/GenzoWeb/newPortfolio/issues"
   },
   "homepage": "https://github.com/GenzoWeb/newPortfolio#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.2"
+  }
 }

@@ -5,7 +5,7 @@
 <div class="contain_home container_home transition-top">
     <h1 id="text_auto" class="title_home">Bienvenue sur mon portfolio</h1>
     <div class="description">
-        <img class="home_img" src="/portfolio/assets/images/developpeur.jpg" alt="">
+        <p><img class="home_img" src="/portfolio/assets/images/developpeur.jpg" alt=""></p>
         <div class="content_home">   
             <p>
                 Je m'appelle <span>Julien</span>, je suis né en 1982.

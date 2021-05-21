@@ -8,7 +8,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/portfolio/assets/css/reset.css"/>  
-        <link rel="stylesheet" type="text/css" href="/portfolio/assets/css/style.css"/>
+        <!-- <link rel="stylesheet" type="text/css" href="/portfolio/assets/css/style.css"/> -->
+        <link rel="stylesheet" type="text/css" href="/portfolio/assets/css/main.css"/>
         <link rel="icon" type="image/x-icon" href="/portfolio/assets/images/favicon.ico">
         <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="/portfolio/assets/images/favicon.ico" /><![endif]-->
         <title>

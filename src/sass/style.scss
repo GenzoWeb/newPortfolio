@@ -52,7 +52,6 @@ body {
         height: 2px;
         background-color: $primary;
         display: block;
-        position: absolute;
         transform: translateY(-50%);
 
         &::before, &::after {
@@ -209,6 +208,7 @@ body {
 
 .content_home {
     margin-top: 50px;
+    width: 100%;
 }
 
 .home_img {
@@ -221,6 +221,7 @@ body {
 }
 
 .description {
+    width: 100%;
     display: flex;
     max-width: $maxWidth;
     margin-left: auto;
@@ -256,6 +257,7 @@ body {
 }
 
 .projects {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -358,7 +360,7 @@ body {
     border-radius: 10px;
     font-weight: bold;
     display: none;
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
     margin-top: 40px;
 }
 
@@ -374,30 +376,25 @@ body {
     margin-top: 40px;
     margin-bottom: 20px;
     width: 75%;
-    display: grid;
-    grid-column-gap: 10px;
-    grid-template-areas: 
-        "a b"
-        "c c"
-        "d d";
+}
+
+.name_email {
+    display: flex;
+    justify-content: space-between;
 }
 
 .contact_name {
-    grid-area: a;
+    width: 50%;
+    margin-right: 20px;
 }
 
 .contact_email {
-    grid-area: b;
+    width: 50%;
 }
 
-.contact_message {
-    grid-area: c;
-}
-
-.contact_submit {
-    grid-area: d;
-    width: 100px;
-    margin: auto;
+.contact_submit input{
+    display: flex;
+    justify-content: center;
 }
 
 .form_input {
@@ -503,12 +500,16 @@ body {
 }
 
 @media #{$small} {
-    .contain_contact form {
-        grid-template-areas: 
-        "a"
-        "b"
-        "c"
-        "d";
+    .name_email {
+        display: block;
+    }
+
+    .contact_name {
+        width: 100%;
+    }
+    
+    .contact_email {
+        width: 100%;
     }
 
     .contain_footer {
@@ -527,6 +528,11 @@ body {
 }
 
 @media #{$verySmall} {
+    .title_home {
+        border-right: unset;
+        animation: none;
+    }
+
     .card {
         width: 200px;
         height: auto;
@@ -537,6 +543,10 @@ body {
     }
 
     .title {
+        margin-top: 80px;
+    }
+
+    .message_submitted {
         margin-top: 80px;
     }
 }
